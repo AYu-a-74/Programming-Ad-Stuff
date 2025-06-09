@@ -1015,7 +1015,7 @@ def guess():
             print(f"You tried {attempt} times.\n")
             attempt=0
         if not braineaten:
-            if x==sequence[7]:
+            if zombie_chosen==sequence[7]:
                 brainstorm=time1+time2+time3+time4+time5+time6+time7+time8
                 yes=input(Victory+"Congratulations! You survived to the end! Do you want to see your results? "+Okay)
                 os.system('clear')
