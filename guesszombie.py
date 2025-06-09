@@ -1027,6 +1027,10 @@ def guess():
             print("You lose.")
             break
     print(f"You tried {totalattempt} times to keep the zombies away from your brains, the zombies move {fails} steps towards you, and you used {brainstorm} seconds to think & write your answers.\n")
+    if not braineaten:
+        print("You successfully keep your brains safe!")
+    else:
+        print("Unfortunately, your brains are eaten by the zombies...")
      
 def revenge():
     print(Wasted+"Conehead Prince: Now you can revenge towards the author! How to revenge is listed below!\n")   
