@@ -32,6 +32,14 @@ def guess():
     totalattempt=0
     eatyourbrains=10
     braineaten=False
+    end1=0
+    end2=0
+    end2=0
+    end4=0
+    end5=0
+    end6=0
+    end7=0
+    end8=0
     for zombie_chosen in sequence:
         if zombie_chosen==1:
             start1=time.time()
@@ -117,6 +125,7 @@ def guess():
                     fails+=1
                     if eatyourbrains==fails:
                         braineaten=True
+                        end1=time.time()
                         break
                     if attempt==1:
                         print(Water+"Hint: This zombie is seen often."+Okay)
@@ -238,6 +247,7 @@ def guess():
                     fails+=1
                     if eatyourbrains==fails:
                         braineaten=True
+                        end2=time.time()
                         break
                     if attempt==1:
                         print(Water+"Hint:This zombie is much tougher than the regular zombie."+Okay)
@@ -357,6 +367,7 @@ def guess():
                     fails+=1
                     if eatyourbrains==fails:
                         braineaten=True
+                        end3=time.time()
                         break
                     if attempt==1:
                         print(Water+"Hint: This zombie is 5 times tougher than a regular zombie."+Okay)
@@ -478,6 +489,7 @@ def guess():
                     fails+=1
                     if eatyourbrains==fails:
                         braineaten=True
+                        end4=time.time()
                         break
                     if attempt==1:
                         print(Water+"Hint: Wait, is this a conehead or a buckethead?"+Okay)
@@ -619,6 +631,7 @@ def guess():
                     fails+=1
                     if eatyourbrains==fails:
                         braineaten=True
+                        end5=time.time()
                         break
                     if attempt==1:
                         print(Water+"Hint: This zombie is not a normal conehead zombie."+Okay)
@@ -732,6 +745,7 @@ def guess():
                     fails+=1
                     if eatyourbrains==fails:
                         braineaten=True
+                        end6=time.time()
                         break
                     if attempt==1:
                         print(Water+"Hint: Is this a zombie?"+Okay)
@@ -757,7 +771,7 @@ def guess():
             attempt=0
         elif zombie_chosen==7:
             start7=time.time()
-            print(EmotionalDamage)
+            print(Water)
             print(r'''                                                                                                                                                                                       
                                                                                         .                                                                                               
                                                                                       -#%                                                                                               
@@ -854,7 +868,7 @@ def guess():
                                                                                                       :###############%#+:                                                              
                                                                                                                                                                                         
                                                                                                                                                          ''')
-            print(Water)
+            print(Okay+Explodered)
             answer7=input("What zombie is this?" + Okay)
             answer7=answer7.lower()
             while True:
@@ -873,6 +887,7 @@ def guess():
                     fails+=1
                     if eatyourbrains==fails:
                         braineaten=True
+                        end7=time.time()
                         break
                     if attempt==1:
                         print(Water+"Hint: This zombie appears when a large wave starts."+Okay)
@@ -991,6 +1006,7 @@ def guess():
                     fails+=1
                     if eatyourbrains==fails:
                         braineaten=True
+                        end8=time.time()
                         break
                     if attempt==1:
                         print(Water+"Hint: This zombie can go into water."+Okay)
@@ -1024,6 +1040,7 @@ def guess():
                 ready=input("Are you ready for the next question? ")
         else:
             print(Explodered+"Brainzzz! Deliciouzzz!"+Okay)
+            brainstorm=time1+time2+time3+time4+time5+time6+time7+time8
             print("You lose.")
             break
     print(f"You tried {totalattempt} times to keep the zombies away from your brains, the zombies move {fails} steps towards you, and you used {brainstorm} seconds to think & write your answers.\n")
@@ -1060,8 +1077,8 @@ def guesszombie():
     ready=ready.lower()
     if ready=="no":
         print("The zombies will not wait if you are not ready!")
-        time.sleep(1)
-        guess()
-        revenge()
+    time.sleep(1)
+    guess()
+    revenge()
 guesszombie()
     
