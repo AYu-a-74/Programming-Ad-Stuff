@@ -13,7 +13,7 @@ sequence=[1,2,3,4,5,6,7,8]
 random.shuffle(sequence)
 print(Okay)
 def prologue():
-    print(Victory+"Narrator=AYu a 74(The ultimate creator, color='Okay'), \nThe Conehead Prince=Zom4(The pro in the video,color='Wasted' or 'Iceblue'), \nThe Buckhead Prince=Noob_Zombie(The noob in the video, this game's creator, \ncolor='EmotionalDamage'), Other Zombies=Those zombies who want to eat your brains(color='Explodered')")
+    print(Victory+"Narrator=AYu a 74(The ultimate creator, color='Okay' or 'Victory'), \nThe Conehead Prince=Zom4(The pro in the video,color='Wasted' or 'Iceblue'), \nThe Buckhead Prince=Noob_Zombie(The noob in the video, this game's creator, color='EmotionalDamage'), \nOther Zombies=Those zombies who want to eat your brains(color='Explodered')")
     print(Okay)
     time.sleep(3)
     print("Narrator: This ASCII Art game is made by a zombie(who is called 'The Buckhead Prince') who just became a programming pro after studying in Mr.Poon's class.\nHe had a hard time learning these concepts, but he mastered mose parsts of this course with this game provided as his final project.\n")
@@ -40,6 +40,14 @@ def guess():
     end6=0
     end7=0
     end8=0
+    time1=0
+    time2=0
+    time3=0
+    time4=0
+    time5=0
+    time6=0
+    time7=0
+    time8=0
     for zombie_chosen in sequence:
         if zombie_chosen==1:
             start1=time.time()
@@ -125,7 +133,8 @@ def guess():
                     fails+=1
                     if eatyourbrains==fails:
                         braineaten=True
-                        end1=time.time()
+                        end1=time.time
+                        time1=end1-start1
                         break
                     if attempt==1:
                         print(Water+"Hint: This zombie is seen often."+Okay)
@@ -248,6 +257,7 @@ def guess():
                     if eatyourbrains==fails:
                         braineaten=True
                         end2=time.time()
+                        time2=end2-start2
                         break
                     if attempt==1:
                         print(Water+"Hint:This zombie is much tougher than the regular zombie."+Okay)
@@ -361,6 +371,7 @@ def guess():
                 elif answer3=="iron bucket zombie":
                     print(EmotionalDamage+"Buckhead Prince: This is TOO EASY for YOU! It will be harder soon! HAHAHAHA!"+Okay)
                     end3=time.time()
+                    time3=end3-start3
                     break
                 else:
                     print(Wasted+"Wrong answer!!"+Explodered+"We Gonna Eat Your Brains!"+Okay)
@@ -490,6 +501,7 @@ def guess():
                     if eatyourbrains==fails:
                         braineaten=True
                         end4=time.time()
+                        time4=end4-start4
                         break
                     if attempt==1:
                         print(Water+"Hint: Wait, is this a conehead or a buckethead?"+Okay)
@@ -632,6 +644,7 @@ def guess():
                     if eatyourbrains==fails:
                         braineaten=True
                         end5=time.time()
+                        time5=end5-start5
                         break
                     if attempt==1:
                         print(Water+"Hint: This zombie is not a normal conehead zombie."+Okay)
@@ -746,6 +759,7 @@ def guess():
                     if eatyourbrains==fails:
                         braineaten=True
                         end6=time.time()
+                        time6=end6-start6
                         break
                     if attempt==1:
                         print(Water+"Hint: Is this a zombie?"+Okay)
@@ -877,6 +891,7 @@ def guess():
                 if answer7=="flag zombie":
                     print(Iceblue+"Conehead Prince: At least your brain is safe...for now."+Okay)
                     end7=time.time()
+                    time7=end7-start7
                     break
                 elif answer7=="a large wave of zombies are coming":
                     print(EmotionalDamage+"Buckhead Prince: This is TOO EASY for YOU! It will be harder soon! HAHAHAHA!"+Okay)
@@ -1007,6 +1022,7 @@ def guess():
                     if eatyourbrains==fails:
                         braineaten=True
                         end8=time.time()
+                        time8=end8-start8
                         break
                     if attempt==1:
                         print(Water+"Hint: This zombie can go into water."+Okay)
@@ -1034,6 +1050,10 @@ def guess():
             if zombie_chosen==sequence[7]:
                 brainstorm=time1+time2+time3+time4+time5+time6+time7+time8
                 yes=input(Victory+"Congratulations! You survived to the end! Do you want to see your results? "+Okay)
+                yes=yes.lower()
+                if yes =="no":
+                    print(Wasted+"Conehead Prince: It is your honor to see your results! And you can also revenge!"+Okay)
+                    time.sleep(2)
                 os.system('clear')
                 #os.system('cls')
             else:
@@ -1042,6 +1062,13 @@ def guess():
             print(Explodered+"Brainzzz! Deliciouzzz!"+Okay)
             brainstorm=time1+time2+time3+time4+time5+time6+time7+time8
             print("You lose.")
+            yes=input(Wasted+"Conehead Prince: Sorry, you are a zombie now, but at least I dont eat brains. Do you want to go to the next step? "+Okay)
+            yes=yes.lower()
+            if yes =="no":
+                print(Wasted+"Conehead Prince: I know you feel terrible, but at least you can revenge in the next step."+Okay)
+                time.sleep(2)
+            os.system('clear')
+            #os.system('cls')
             break
     print(f"You tried {totalattempt} times to keep the zombies away from your brains, the zombies move {fails} steps towards you, and you used {brainstorm} seconds to think & write your answers.\n")
     if not braineaten:
@@ -1050,24 +1077,41 @@ def guess():
         print("Unfortunately, your brains are eaten by the zombies...")
      
 def revenge():
-    print(Wasted+"Conehead Prince: Now you can revenge towards the author! How to revenge is listed below!\n")   
-    print("1 attempt = 1 slap\n1 fail = 1 punch\nevery 30 seconds used = 1 kick\nyou lose the game = 10 slaps + 15 punches + 5 kicks\n additional revenge can be added if you think he is kinda offending something") 
-    print(EmotionalDamage+"Buckethead Prince: Oh NOOOO! This is the WORST PART of this game! Give me MERCY! Almighty Players!")  
+    print(Wasted+"Conehead Prince: Now you can revenge towards the author! The referrence of how to revenge is listed below!\n")   
+    print("1 attempt = 1 slap\n1 fail = 1 punch\nevery 30 seconds used = 1 kick\nyou lose the game = 10 slaps + 15 punches + 5 kicks\n additional revenge can be added if you think he is kinda offending something!\n You can also choose to give him mercy, but I dont recommend that!") 
+    print(EmotionalDamage+"Buckethead Prince: Oh NOOOO! This is the WORST PART of this game! Give me MERCY! Almighty Players!"+Okay)  
     slapdamage=20
-    punchdamage=50 
-    kickdamage=100
+    punchdamage=30 
+    kickdamage=75
     slap=int(input(Explodered+"How many slaps you want to apply? "+Okay))
     punch=int(input(Explodered+"How many punches you want to apply? "+Okay))
     kick=int(input(Explodered+"How many kicks you want to apply? "+Okay))
     totaldamage=slapdamage*slap+punchdamage*punch+kickdamage*kick
-    if totaldamage<457:
+    print(Victory)
+    print(f"You damaged the Buckethead Prince by {totaldamage} points! He deserves your revenge for making a game that makes you lose your brains!")
+    time.sleep(0.5)
+    if totaldamage==0:
+        print("\nYou are too mercy towards the Buckethead Prince, he will continue to make those stupid games in the future...")
         print(EmotionalDamage+"Buckethead Prince: Thank you for your mercy! I will not forget you forever!")
-    elif totaldamage<913:
+    elif totaldamage<457:
+        print("\nYou only beat the Buckethead Prince a few hits, it is WAY NOT ENOUGH!")
         print(EmotionalDamage+"Buckethead Prince: I think I deserves that...")
+    elif totaldamage<913:
+        print("\nYou beat the Buckethead Prince harder, his bucket is degraded under your hits, now he know that his game makes you angry, good job!")
+        print(EmotionalDamage+"Buckethead Prince: IT HURTS!! STOP REVENGING AT ME!! I DESERVES YOUR REVENGE! I AM SORRY!!")
     elif totaldamage<1370:
+        print("\nYou beat the Buckethead Prince quite hard, his bucket is nearly broken and he looks stupid. He does not want to see you again next time...")
         print(Wasted+"Conehead Prince: You beat him quite hard... He does not want to see anyone or any zombie now.")
-    else:
+    elif totaldamage<1000000:
+        print("\nYou beat the Buckethead Prince WAY TOO HARD! HE FAINTS! Now you need to explain to the Conehead Prince about what you have done...")
         print(Wasted+"Conehead Prince: I think you beat him TOO HARD... He already fainted...")
+    else:
+        print("\nYou destroyed the Earff...Now the Conehead Prince wants to beat you now...")
+        time.sleep(1)
+        print(Wasted+"Conehead Prince: ORA!ORA!ORA!ORA!ORA!ORA!ORA!OOOORRRRRAAAAAAAA!!!(Jotaro style beating)")
+        time.sleep(3)
+        print(Okay+"Now you are a pile of space trash floating in the universe, and you give up thinking. You become Kars.")
+        
     
 def guesszombie():
     os.system('clear')
